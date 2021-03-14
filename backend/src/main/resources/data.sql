@@ -12,6 +12,7 @@ INSERT INTO tb_genre (name) VALUES ('Comédia');
 INSERT INTO tb_genre (name) VALUES ('Guerra');
 INSERT INTO tb_genre (name) VALUES ('Faroeste');
 INSERT INTO tb_genre (name) VALUES ('Animação');
+INSERT INTO tb_genre (name) VALUES ('Ficção científica');
 
 INSERT INTO tb_movie (title, sub_title, year, img_uri, synopsis, genre_id) VALUES ('Raya e o Último Dragão ', 'O reino encantado Kumandra', 2021, 'https://www.themoviedb.org/t/p/w500_and_h282_face/rcUcYzGGicDvhDs58uM44tJKB9F.jpg', 'O reino encantado Kumandra é dividido em cinco regiões e sua população venerava os dragões mágicos que eram presentes no reino, porém quando uma força maligna ameaçou a Terra, os dragões se sacrificaram para salvar a humanidade. Agora, 500 anos depois, o mesmo mal voltou e cabe a uma guerreira solitária, Raya, rastrear o lendário último dragão para restaurar a terra fraturada e seu povo dividido.', 1);
 INSERT INTO tb_movie (title, sub_title, year, img_uri, synopsis, genre_id) VALUES ('Freaky: No Corpo de um Assassino ', 'Basic switch. Killer new look.', 2020, 'https://www.themoviedb.org/t/p/w533_and_h300_bestv2/nalyUACCgsux5ccEI0HeeKOuTrf.jpg', 'Millie, uma estudante do último ano do ensino médio, está tentando sobreviver sendo a garota impopular quando se torna o próximo alvo de The Butcher, um serial killer. Seu encontro fatídico é distorcido e eles acordam um no corpo do outro.', 2);
