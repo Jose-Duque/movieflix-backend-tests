@@ -39,7 +39,7 @@ public class User implements Serializable {
 	private Set<Role> roles = new HashSet<>();
 	
 	@OneToMany(mappedBy = "user")
-	private List<Review> reviews = new ArrayList<>();
+	private Set<Review> reviews = new HashSet<>();
 	
 	public User() {
 	}
@@ -87,7 +87,7 @@ public class User implements Serializable {
 		return roles;
 	}
 
-	public List<Review> getReviews() {
+	public Set<Review> getReviews() {
 		return reviews;
 	}
 
