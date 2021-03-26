@@ -25,6 +25,9 @@ public class UserService implements UserDetailsService {
 	@Autowired
 	private UserRepository repository;
 	
+	@Autowired
+	private AuthService authService;
+	
 	@Transactional(readOnly = true)
 	public List<UserDTO> findAll() {
 		List<User> users = repository.findAll();
@@ -33,6 +36,9 @@ public class UserService implements UserDetailsService {
 	
 	@Transactional(readOnly = true)
 	public UserDTO finById(Long id) {
+		
+		authService.validadeSelfOrMenber(id);
+		
 		Optional<User> user = repository.findById(id);
 		User obj = user.orElseThrow(() -> new ResourceNotFoundException("Usuário não encontrado"));
 		return new UserDTO(obj);
