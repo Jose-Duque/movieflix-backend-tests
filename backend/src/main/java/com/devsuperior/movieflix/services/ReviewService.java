@@ -26,10 +26,10 @@ public class ReviewService {
 	private ReviewRepository repository;
 	
 	@Autowired
-	private UserRepository userRepository;
+	private MovieRepository movieRepository;
 	
 	@Autowired
-	private MovieRepository movieRepository;
+	private AuthService authService;
 	
 	@Transactional(readOnly = true)
 	public List<ReviewDTO> findAll() {
@@ -40,7 +40,9 @@ public class ReviewService {
 	@Transactional
 	public ReviewDTO insert(ReviewDTO dto) {
 		try {
-			User user = userRepository.getOne(dto.getUserId());
+			User user = authService.authenticated();
+			authService.validadeSelfOrMenber(user.getId());
+			
 			Movie movie = movieRepository.getOne(dto.getMovieId());
 			Review entity = new Review();
 			entity.setText(dto.getText());
