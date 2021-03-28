@@ -43,13 +43,16 @@ public class ReviewService {
 			User user = authService.authenticated();
 			authService.validadeSelfOrMenber(user.getId());
 			
+			//user = userRepository.getOne(dto.getUser().getId());
+			UserDTO newDto = new UserDTO(user);
+			
 			Movie movie = movieRepository.getOne(dto.getMovieId());
 			Review entity = new Review();
 			entity.setText(dto.getText());
 			entity.setUser(user);
 			entity.setMovie(movie);
 			entity = repository.save(entity);
-			return new ReviewDTO(entity);
+			return new ReviewDTO(entity, newDto);
 		}
 		catch(EntityNotFoundException e) {
 			throw new ResourceNotFoundException("Id not found" + e.getMessage());
